@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        #certificate-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .certificate {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificate img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .back-button {
+            background-color: #1681c3;
+            border: 1px solid green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Achievement</h1>
+        <a href="index.html"><button class="back-button" onclick="goBack()">Back</button></a>
+    </header>
+    
+    <main>
+        <div id="certificate-container"></div>
+    </main>
+    
+    <footer>
+        <p>&copy; Achievement</p>
+    </footer>
+    
+    <script>
+        const certificates = [
+            {
+                name: "Master Data Management for Beginners",
+                description: "Excited to share that I’ve received my Certificate of Achievement for completing the \"Master Data Management for Beginners\" course from TATA Consultancy Services! This journey has really deepened my understanding of data management. Grateful for the opportunity and ready to put this knowledge into practice! #TCS #CertificateOfAchievement #LifelongLearning",
+                image: "p/1.png",
+                link: "https://example.com/certificate1"
+            },
+            {
+                name: "AWS Academy Certificate of Completion for the Introduction to Cloud",
+                description: "Excited to share my AWS Academy Certificate of Completion for the Introduction to Cloud course! 🎓 After dedicating 60 hours to learning and hands-on experience, I'm thrilled to have achieved this milestone.",
+                image: "p/2.png",
+                link: "https://www.credly.com/badges/3c32ec73-324d-4a39-8770-01bd2bb1fa1a/linked_in?t=sne8co"
+            },
+            {
+                name: "The Cybersecurity Threat Landscape",
+                description: "Just finished the course “The Cybersecurity Threat Landscape” by Marc Menninger! Check it out: https://lnkd.in/dhgVnwWx #threatvulnerabilitymanagement #cybersecurity.",
+                image: "p/3.png",
+                link: "https://www.linkedin.com/learning/certificates/7277cb63e8f166f07e829f4693c4a93ffa23978997490232783c6d42e8f1ecac"
+            },
+            {
+                name: "Cybersecurity Awareness: Cybersecurity Terminology",
+                description: "Just finished the course “Cybersecurity Awareness: Cybersecurity Terminology” by Lauren Zink! Check it out: https://lnkd.in/ePk_4FUN #informationsecurityawareness #cybersecurity.",
+                image: "p/4.png",
+                link: "https://www.linkedin.com/learning/certificates/e44d45be433356aa0ca74fee273c01950cf294ab65ead55c8ed2a76a754dc240"
+            },
+            {
+                name: "Cybersecurity Awareness: Cybersecurity Terminology",
+                description: "Just finished the course “Cybersecurity Awareness: Cybersecurity Terminology” by Lauren Zink! Check it out: https ://lnkd.in/e9g_RVsZ #informationsecurityawareness #cybersecurity.",
+                image: "p/5.png",
+                link: "https://www.linkedin.com/learning/certificates/5389d78331ea8a006539edb48063068e3de2409053cddf0f1bf821365496539f"
+            },
+            {
+                name: "Cybersecurity Awareness: Cybersecurity Terminology",
+                description: "Just finished the course “Cybersecurity Awareness: Cybersecurity Terminology” by Lauren Zink! Check it out: https://lnkd.in/eiQ2bd5G #informationsecurityawareness #cybersecurity.",
+                image: "p/6.png",
+                link: "https://www.linkedin.com/learning/certificates/95b33b22c949389aa67486175977f0d10ec3d6bda3b38b0496df279614d86d9d"
+            },
+            {
+                name: "Cybersecurity Foundations",
+                description: "Just finished the course “Cybersecurity Foundations” by Malcolm Shore! Check it out: https://lnkd.in/exuhkZmY #cybersecurity.",
+                image: "p/7.png",
+                link: "https://www.linkedin.com/learning/certificates/15dd6e09d1d3555fd6e805a51b570ac5de84026ac79fcad6b85e274223c92429"
+            },
+            {
+                name: "Cybersecurity Foundations",
+                description: "Just finished the course “Cybersecurity Foundations” by Malcolm Shore! Check it out: https://lnkd.in/exuhkZmY #cybersecurity.",
+                image: "p/8.png",
+                link: "https://www.linkedin.com/learning/certificates/eb638e7948aad2dd48051504958948ca224b2dce25ecef7bcd025f6444a6c1e7"
+            },
+            {
+                name: "Cybersecurity Foundations",
+                description: "Just finished the course “Cybersecurity Foundations” by Malcolm Shore! Check it out: https://lnkd.in/exuhkZmY #cybersecurity.",
+                image: "p/9.png",
+                link: "https://www.linkedin.com/learning/certificates/7969f8bbad210d4d5e57c143646332260e4e96bfaf53d36dafc22416ec1362bb"
+            },
+            {
+                name: "Microsoft Security Copilot",
+                description: "Just finished the course “Microsoft Security Copilot” by Bryan Li! Check it out: https://lnkd.in/eGu4GVCu #microsoftcopilot #incidentresponse.",
+                image: "p/10.png",
+                link: "https://www.linkedin.com/learning/certificates/2fc1b2ecff8f9327a0dfd25cd69245350d50b8519ffde4542b4e3be5596793e5"
+            },
+            {
+                name: "Career Essentials in Cybersecurity by Microsoft and LinkedIn",
+                description: "Just finished the learning path “Career Essentials in Cybersecurity by Microsoft and LinkedIn”! Check it out: https://lnkd.in/e_DzaFh7",
+                image: "p/11.png",
+                link: "https://www.linkedin.com/learning/certificates/3a121b162a7a66cf877b9fca7f632cc2a8ae261a47c8f3999d1852ba11b8af06"
+            }
+        ];
+
+        function displayCertificates() {
+            const container = document.getElementById('certificate-container');
+            certificates.forEach(cert => {
+                const certDiv = document.createElement('div');
+                certDiv.className = 'certificate';
+                certDiv.innerHTML = `
+                    <img src="${cert.image}" alt="${cert.name}">
+                    <h2>${cert.name}</h2>
+                    <p>${cert.description}</p>
+                    <a href="${cert.link}" target="_blank">View Certificate</a>
+                `;
+                container.appendChild(certDiv);
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.addEventListener('DOMContentLoaded', displayCertificates);
+    </script>
+</body>
+</html>
